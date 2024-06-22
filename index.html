@@ -3,31 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Gallery</title>
+    <title>Movie Gallery</title>
     <style>
       body {
         text-align: center;
-        margin-left: 400px;
-        height: 600px;
-        width: 500px;
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      h1,
+      h2 {
+        color: #333;
       }
       img {
-        height: 400px;
-        width: 500px;
+        height: auto;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+      }
+      .container {
+        margin: auto;
+        width: 80%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="button"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+      a {
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <h1>Search here for your favorite Movies/webseries here</h1>
-    <h2>Thiss website is created by Shlok Dubey</h2>
-    <img
-      src="80 Pics Featuring People, Animals, And Places Around The Globe, Captured By Daniel Kordan.jpeg"
-      alt="Image Problem"
-    />
-    <br />
-    <br />
-    <input type="text" />
-
-    <a href="https://hdhub4u.wales/"><input type="button" value=" Bsdk " /></a>
+    <div class="container">
+      <h1>Search for Your Favorite Movies/Web Series</h1>
+      <h2>Created by Shlok Dubey</h2>
+      <img
+        src="80 Pics Featuring People, Animals, And Places Around The Globe, Captured By Daniel Kordan.jpeg"
+        alt="Scenic View"
+      />
+      <br />
+      <input type="text" placeholder="Search..." />
+      <a href="https://hdhub4u.wales/">
+        <input type="button" value="Search" />
+      </a>
+    </div>
   </body>
 </html>
