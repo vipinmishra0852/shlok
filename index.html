@@ -18,20 +18,22 @@
       }
       img {
         height: auto;
-        width: 80%;
+        width: 100%;
         max-width: 500px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         margin-bottom: 20px;
+        animation: fadeIn 2s ease-in-out;
       }
       .container {
         margin: auto;
-        width: 80%;
+        width: 90%;
         max-width: 600px;
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        animation: slideIn 1s ease-out;
       }
       input[type="text"] {
         width: 100%;
@@ -40,6 +42,10 @@
         box-sizing: border-box;
         border: 2px solid #ccc;
         border-radius: 4px;
+        transition: border-color 0.3s;
+      }
+      input[type="text"]:focus {
+        border-color: #4caf50;
       }
       input[type="button"] {
         background-color: #4caf50;
@@ -48,28 +54,91 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        transition: background-color 0.3s;
       }
       input[type="button"]:hover {
         background-color: #45a049;
       }
-      a {
-        text-decoration: none;
+      .quotes {
+        margin: 20px 0;
+        font-style: italic;
+        color: #666;
+        animation: fadeIn 3s ease-in-out;
+      }
+      .tubelight-effect {
+        animation: tubelight 1s infinite;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes tubelight {
+        0%,
+        50%,
+        100% {
+          opacity: 1;
+        }
+        25%,
+        75% {
+          opacity: 0.1;
+        }
+      }
+      @media (max-width: 600px) {
+        .container {
+          width: 100%;
+          padding: 10px;
+        }
+        img {
+          width: 100%;
+        }
       }
     </style>
+    <script>
+      function searchMovies() {
+        var query = document.getElementById("searchQuery").value;
+        var url = "https://hdhub4u.wales/?s=" + encodeURIComponent(query);
+        window.location.href = url;
+      }
+    </script>
   </head>
   <body>
     <div class="container">
       <h1>Search for Your Favorite Movies/Web Series</h1>
-      <h2>Created by Shlok Dubey</h2>
+      <h2 class="tubelight-effect">Created by Shlok Dubey</h2>
       <img
         src="80 Pics Featuring People, Animals, And Places Around The Globe, Captured By Daniel Kordan.jpeg"
         alt="Scenic View"
       />
       <br />
-      <input type="text" placeholder="Search..." />
-      <a href="https://hdhub4u.wales/">
-        <input type="button" value="Search" />
-      </a>
+      <input type="text" id="searchQuery" placeholder="Search..." />
+      <input type="button" value="Search" onclick="searchMovies()" />
+      <div class="quotes">
+        <p>
+          "The best way to predict the future is to create it." - Peter Drucker
+        </p>
+        <p>
+          "Life is what happens when you're busy making other plans." - John
+          Lennon
+        </p>
+        <p>
+          "You only live once, but if you do it right, once is enough." - Mae
+          West
+        </p>
+      </div>
     </div>
   </body>
 </html>
